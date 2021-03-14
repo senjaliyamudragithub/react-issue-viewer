@@ -1,5 +1,4 @@
 # Getting Started with React Repository Issue Viewer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
+This Project provides basic issue browsing capabilities for react repository.
 
