@@ -32,8 +32,11 @@ const useStyles = makeStyles((theme) => ({
 const RepoHeader: React.FunctionComponent = (props) => {
   const classes = useStyles();
   const { loading, error, data } = useQuery(REPOSITORY_INFO);
+  
   if (error) return <NotFound />;
+
   if (loading || !data) return <Loader />;
+
   return (
     <>
       <div className={classes.container}>

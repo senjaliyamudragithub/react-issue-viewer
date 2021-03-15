@@ -29,7 +29,7 @@ const CommentItem: React.FC<Prop> = ({
   const classes = useStyles();
   return (
     <div className={classes.main}>
-      {author ? (
+      {author.name ? (
         <CommentHeader
           avatarUrl={author.avatarUrl}
           name={author.name}

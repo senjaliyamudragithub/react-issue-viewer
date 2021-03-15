@@ -1,3 +1,4 @@
+import React from "react";
 import { useQuery } from "@apollo/client";
 import { RouteComponentProps } from "react-router";
 import Typography from "@material-ui/core/Typography";
@@ -11,6 +12,7 @@ import Loader from "../Utils/Loader";
 import NotFound from "../Utils/NotFound";
 import CommentContainer from "../Comment/CommentContainer";
 import StateIcon from "../Utils/StateIcon";
+
 const useStyles = makeStyles((theme) => ({
   container: {
     margin: "0 10%",
@@ -35,6 +37,7 @@ const formSecondaryHeader = (
   `# ${issueNumber} ${author.name || "Unknown name"} ${dateTransformer(
     createdAt
   )} ${totalCount} comments`;
+
 const IssueDetail: React.FC<RouteComponentProps<MatchParams>> = (props) => {
   const classes = useStyles();
   const { id: issueNumber } = props.match.params || {};
@@ -43,10 +46,13 @@ const IssueDetail: React.FC<RouteComponentProps<MatchParams>> = (props) => {
   });
 
   if (error) return <NotFound />;
+
   if (loading || !data) return <Loader />;
+
   const {
     repository: { issue },
   } = data || {};
+
   return (
     <div className={classes.container}>
       <ListItem>
@@ -67,4 +73,5 @@ const IssueDetail: React.FC<RouteComponentProps<MatchParams>> = (props) => {
     </div>
   );
 };
+
 export default IssueDetail;

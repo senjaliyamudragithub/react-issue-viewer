@@ -1,3 +1,4 @@
+import React from "react";
 import TextField from "@material-ui/core/TextField";
 import SearchIcon from "@material-ui/icons/Search";
 import Radio from "@material-ui/core/Radio";
@@ -26,6 +27,7 @@ interface Props {
   stateValue: string;
   onFindResult: Function;
 }
+
 const SearchHeader: React.FC<Props> = ({
   searchField,
   onChangeSearchField,
@@ -79,4 +81,5 @@ const SearchHeader: React.FC<Props> = ({
     </nav>
   );
 };
+
 export default SearchHeader;

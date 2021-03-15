@@ -5,7 +5,6 @@ export const REPOSITORY_INFO = gql`
     repository(name: "react", owner: "facebook") {
       id
       name
-      createdAt
       description
       stargazers {
         totalCount

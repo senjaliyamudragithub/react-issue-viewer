@@ -12,17 +12,18 @@ const SearchContainer = () => {
   const [searchField, setSearchField] = React.useState("");
   const [stateValue, setStateValue] = React.useState("open");
   const [loadResult, { loading, data }] = useLazyQuery(SEARCH_ISSUE_QUERY);
-console.log(loading,data)
+
   const onChangeSearchField = (event: React.FormEvent) => {
     const target = event.target as HTMLSelectElement;
     setSearchField(target.value);
   };
+
   const onStateChange = (event: React.FormEvent) => {
     const target = event.target as HTMLSelectElement;
     setStateValue(target.value);
   };
+
   const onFindResult = (event: React.MouseEventHandler<HTMLButtonElement>) => {
-    console.log("call")
     loadResult({
       variables: { query: formQueryString(searchField, stateValue) },
     });

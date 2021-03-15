@@ -19,6 +19,7 @@ function Main() {
       state: tabValue,
     },
   });
+
   const onLoadMore = () => {
     fetchMore({
       variables: {
@@ -46,7 +47,9 @@ function Main() {
       },
     });
   };
+
   if (error) return <NotFound />;
+  
   if (loading) return <Loader />;
 
   return (

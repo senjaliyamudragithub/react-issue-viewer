@@ -1,4 +1,3 @@
-import "@testing-library/jest-dom";
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import { MockedProvider } from "@apollo/client/testing";
@@ -88,6 +87,7 @@ describe("Main Dashboard", () => {
     expect(screen.getByTestId("custom-state-element")).toBeInTheDocument();
     expect(screen.getByTestId("comment-badge")).toBeInTheDocument();
   });
+
   it("does not render comment badge when comment count is 0", async () => {
     commentCount = 0;
     openCount = 100;
@@ -104,4 +104,5 @@ describe("Main Dashboard", () => {
     expect(screen.getByTestId("custom-state-element")).toBeInTheDocument();
     expect(screen.queryByText("comment-badge")).not.toBeInTheDocument();
   });
+  
 });

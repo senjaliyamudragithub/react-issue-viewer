@@ -20,7 +20,7 @@ const CommentContainer: React.FC<Props> = ({ commentList }) => {
   if (!commentList.length) {
     return <Typography>No comments available</Typography>;
   }
-  console.log(commentList,"commentList")
+  
   return (
     <>
       {commentList.map(({ node:comment }) => (

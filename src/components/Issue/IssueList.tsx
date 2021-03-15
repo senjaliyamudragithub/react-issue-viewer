@@ -1,3 +1,4 @@
+import React from "react";
 import IssueItem from "./IssueItem";
 import { Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
@@ -12,6 +13,7 @@ const useStyles = makeStyles((theme) => ({
     textDecoration: "none",
   },
 }));
+
 interface Props {
   list: {
     node: {
@@ -29,6 +31,7 @@ interface Props {
     };
   }[];
 }
+
 const IssueList: React.FC<Props> = ({ list }) => {
   const validatedList = list.filter(({ node }) => node.state);
   const classes = useStyles();
@@ -46,4 +49,5 @@ const IssueList: React.FC<Props> = ({ list }) => {
     </List>
   );
 };
+
 export default IssueList;

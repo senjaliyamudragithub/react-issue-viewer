@@ -40,4 +40,5 @@ const FilterTab: React.FC<Props> = ({
     </div>
   );
 };
+
 export default FilterTab;

@@ -1,4 +1,5 @@
 import { gql } from "@apollo/client";
+
 export const REPOSITORY_ISSUE_LIST = gql`
   query GetIssueList($after: String, $state: [IssueState!]) {
     repository(name: "react", owner: "facebook") {

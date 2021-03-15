@@ -18,6 +18,7 @@ interface Props {
 
 const StateIcon: React.FC<Props> = ({state}) => {
   const classes = useStyles();
+  
   return (
     <InfoIcon data-testid="custom-state-element"
       className={state === "OPEN" ? classes.open : classes.closed}

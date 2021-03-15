@@ -1,3 +1,4 @@
+import React from "react";
 import Typography from "@material-ui/core/Typography";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
@@ -15,6 +16,7 @@ const useStyles = makeStyles((theme) => {
     },
   };
 });
+
 interface Props {
   node: {
     comments: {
@@ -30,6 +32,7 @@ interface Props {
     };
   };
 }
+
 const IssueItem: React.FC<Props> = ({ node }) => {
   const classes = useStyles();
   return (
@@ -64,4 +67,5 @@ const IssueItem: React.FC<Props> = ({ node }) => {
     </ListItem>
   );
 };
+
 export default IssueItem;

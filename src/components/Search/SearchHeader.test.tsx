@@ -1,12 +1,13 @@
-import "@testing-library/jest-dom";
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import SearchHeader from "./SearchHeader";
 
 describe("SearchHeader", () => {
+
   beforeEach(() => {
     render(<SearchHeader />);
   });
+
   it("renders SearchHeader", async () => {
     const searchText = await screen.findAllByText(/Search Issue/);
     expect(searchText).toHaveLength(2);
@@ -15,4 +16,5 @@ describe("SearchHeader", () => {
     expect(screen.queryByPlaceholderText("Search here")).toBeInTheDocument();
     expect(screen.getByTestId("radio-group")).toBeInTheDocument();
   });
+  
 });
